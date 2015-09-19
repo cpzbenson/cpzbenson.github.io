@@ -361,12 +361,15 @@ input[type="checkbox"]{
 	      <ul class="nav navbar-nav" id="narbar_list" style="float: right;">
 		      <li class="active">
 		        <a id="drop4" href="#weather" >
-		        	天氣.
+		        	天氣
 		        </a>
 		      </li>
 		      <li><a href="#wave">
 		      	浪況
 		      </a></li>
+		      <li><a href="#road">
+		      	路況
+			  </a></li>
 			  <li><a href="#checklist">
 		      	必帶物品
 			  </a></li>
@@ -427,6 +430,22 @@ input[type="checkbox"]{
 	    
 	</div> <!--#wave-->
 	
+	<div id="road">
+	<div class="story">
+		<div style="margin-top: 100px; float:left; text-align: left;" class="margin_adjust">
+			<div>
+				<div class="page_title wow slideInLeft" style="float: left">
+    				<i class="fa fa-random fa-4"></i>
+    				路況
+    			</div>
+			</div>
+    		<img class="img-polaroid wow slideInRight" id="road_img" style="opacity: 0.9;">
+		</div>
+    </div> <!--.story-->
+	    
+	</div> <!--#wave-->
+
+
 	<div id="checklist">
 		<div class="story">
 	    	<div class="margin_adjust">
@@ -597,6 +616,11 @@ input[type="checkbox"]{
 		    }, 500);
 			return false;
 		});
+
+
+		var d = new Date();
+		var currentMinutes = d.getMinutes()-1;
+		$("#road_img").attr("src","http://210.241.131.249/m2/map_public/map_n_3_"+currentMinutes+".jpg");
 	})
 	</script>
 	<script>
